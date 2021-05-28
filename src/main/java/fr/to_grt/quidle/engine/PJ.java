@@ -41,4 +41,9 @@ public class PJ extends Joueur{
         }
     }
 
+    public String hi() { 
+        String phrase = "Bonjour ! Je me prénomme " + name + ". Heureux de faire ta connaissance mon petit loulou ! <3";
+        return(phrase);
+    }
+
 }
