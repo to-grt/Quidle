@@ -13,5 +13,13 @@ public class Emplacement {
         z = pZ;
         nomDuMonde = pNomDuMonde;
     }
+
+    public int  getX() { return x; }
+    public void setX(int pX) { x = pX; }
     
+    public int  getY() { return y; }
+    public void setY(int pY) { y = pY; }
+
+    public int  getZ() { return z; }
+    public void setZ(int pZ) { z = pZ; }
 }
