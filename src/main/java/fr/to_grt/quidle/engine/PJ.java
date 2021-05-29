@@ -31,14 +31,9 @@ public class PJ extends Joueur{
 
     private String fillName(){
 
-        try ( Scanner scanner = new Scanner(System.in); ) {
-
-            System.out.println("Renseignez le nom de votre Personnage");
-            return scanner.nextLine();
-        } 
-        catch (Exception e) {
-            return "WOWOWOWOWO le scanner n'a pas fonctionner";
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Renseignez le nom de votre Personnage");
+        return scanner.nextLine();
     }
 
     public String hi() { 
