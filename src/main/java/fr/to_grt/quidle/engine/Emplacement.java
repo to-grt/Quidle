@@ -4,13 +4,11 @@ public class Emplacement {
 
     int     x;
     int     y;
-    int     z;
     String  nomDuMonde; //en attendant la classe Monde :) ou autre
 
-    public Emplacement(int pX, int pY, int pZ, String pNomDuMonde) {
+    public Emplacement(int pX, int pY, String pNomDuMonde) {
         x = pX;
         y = pY;
-        z = pZ;
         nomDuMonde = pNomDuMonde;
     }
 
@@ -19,7 +17,4 @@ public class Emplacement {
     
     public int  getY() { return y; }
     public void setY(int pY) { y = pY; }
-
-    public int  getZ() { return z; }
-    public void setZ(int pZ) { z = pZ; }
 }

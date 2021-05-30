@@ -10,7 +10,7 @@ public class PJ extends Joueur{
     public PJ(String pNom, String pNomDuMonde){
 
         nom =           pNom;
-        emplacement =   new Emplacement(0,0,0,pNomDuMonde);
+        emplacement =   new Emplacement(0,0,pNomDuMonde);
         competences =   new Competences();
         inventaire =    new Inventaire();
     }
