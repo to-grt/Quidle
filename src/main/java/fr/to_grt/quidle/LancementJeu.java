@@ -1,8 +1,9 @@
 package src.main.java.fr.to_grt.quidle;
 import src.main.java.fr.to_grt.quidle.engine.PJ;
-import java.util.Scanner;
 
 public class LancementJeu {
+
+    static MonScanner scanner = new MonScanner();
 
     public static void main(String[] args) {
 
@@ -11,25 +12,39 @@ public class LancementJeu {
 
     public static void boucleDeJeu() {
 
-        String commande;
-        PJ myPersonnage = new PJ("Monde de base !");
+        String  commande;
+        effaceConsole();
+        String  nom = prochaineLigne("Quel est votre nom ?");
+        PJ      myPersonnage = new PJ(nom, "Monde de base !");
         afficheMessage(myPersonnage.hi());
+        attenteEntree();
         
         while(true) {
-            commande = entreeUtilisateur("Quelle est votre prochaine action ?");
+            effaceConsole();
+            commande = prochaineLigne("Quelle est votre prochaine action ?");
             afficheMessage("La commande entrée est : " + commande);
-            if(commande.equals("quit")) {
-                afficheMessage("On quitte le jeu :)");
+            if(commande.equals("quitter")) {
+                afficheMessage("On quitte le jeu :)  Appuie sur entrer pour quitter.");
+                attenteEntree();
                 return;
             }
+            attenteEntree();
         }
     }
+    
+    public static void attenteEntree() {
+        prochaineLigne("");
+    }
 
-    public static String entreeUtilisateur(String message) {
+    public static String prochaineLigne(String message) {
 
-        Scanner scanner = new Scanner(System.in);
         afficheMessage(message);
-        return scanner.nextLine();
+        return scanner.prochaineLigne();
+    }
+
+    public static void effaceConsole() {
+
+        afficheMessage("\033[H\033[2J");
     }
 
     public static void afficheMessage(String message) {

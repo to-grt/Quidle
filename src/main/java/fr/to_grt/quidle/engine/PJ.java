@@ -1,23 +1,22 @@
 package src.main.java.fr.to_grt.quidle.engine;
-import java.util.Scanner;  // Import the Scanner class
 
 public class PJ extends Joueur{
     
-    private String          name;
+    private String          nom;
     private Emplacement     emplacement;
     private Competences     competences;
     private Inventaire      inventaire;
 
-    public PJ(String pNomDuMonde){
+    public PJ(String pNom, String pNomDuMonde){
 
-        name =          fillName();
+        nom =           pNom;
         emplacement =   new Emplacement(0,0,0,pNomDuMonde);
         competences =   new Competences();
         inventaire =    new Inventaire();
     }
     
-    public String       getName() { return name; }
-    public void         setName(String pName) { name = pName; }
+    public String       getNom() { return nom; }
+    public void         setNom(String pNom) { nom = pNom; }
 
     public Emplacement  getEmplacement() { return emplacement; }
     public void         setEmplacement(Emplacement pEmplacement) { emplacement = pEmplacement; }
@@ -28,17 +27,8 @@ public class PJ extends Joueur{
     public Inventaire   getInventaire() { return inventaire; }
     public void         setInventaire(Inventaire pInventaire) { inventaire = pInventaire; }
 
-
-    private String fillName(){
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Renseignez le nom de votre Personnage");
-        return scanner.nextLine();
-    }
-
     public String hi() { 
-        String phrase = "Bonjour ! Je me prénomme " + name + ". Heureux de faire ta connaissance mon petit loulou ! <3";
+        String phrase = "Bonjour " + nom + " ! Heureux de faire ta connaissance mon petit loulou ! <3";
         return(phrase);
     }
-
 }
