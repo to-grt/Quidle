@@ -31,4 +31,25 @@ public class PJ extends Joueur{
         String phrase = "Bonjour " + nom + " ! Heureux de faire ta connaissance mon petit loulou ! <3";
         return(phrase);
     }
+
+    public void parler(String message) {
+
+        System.out.println(message);
+    }
+
+    public void ajouter(Objet pObjet) {
+
+        parler(inventaire.ajoutObjet(pObjet));
+    }
+
+    public void retirer(Objet pObjet) {
+
+        parler(inventaire.retraitObjet(pObjet));
+    }
+
+    public void listeInventaire() {
+
+        parler("J'ai dans mon inventaire :");
+        parler(inventaire.listeInventaire());
+    }
 }
