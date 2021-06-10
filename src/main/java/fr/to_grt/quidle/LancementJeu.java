@@ -19,12 +19,23 @@ public class LancementJeu {
         String  nom = prochaineLigne("Quel est votre nom ?");
         PJ      myPersonnage = new PJ(nom, "Monde de base !");
         afficheMessage(myPersonnage.hi());
-        afficheMessage("Nous allons maintenant au tutoriel du jeu");
+        afficheMessage("Nous allons maintenant passer au tutoriel du jeu");
         attenteEntree();
         Objet epee = tutoriel();
         Objet bouclier = new Objet("bouclier", 1, 1, "bouclier", new Stat(1,0,1,0,0,0,0,0,0,0,0,0));
+        myPersonnage.equiperObjet("épée en bois", "bras gauche");
         myPersonnage.ajouter(epee);
         myPersonnage.ajouter(bouclier);
+        myPersonnage.listeInventaire();
+        myPersonnage.equiperObjet("épée en bois", "bras gauche");
+        myPersonnage.listeInventaire();
+        myPersonnage.equiperObjet("épée en bois", "bras droit");
+        myPersonnage.listeInventaire();
+        myPersonnage.equiperObjet("bouclier", "bras droit");
+        myPersonnage.listeInventaire();        
+        myPersonnage.equiperObjet("bouclier", "bras gauche");
+        myPersonnage.listeInventaire();
+
         attenteEntree();
         
         while(true) {
@@ -68,6 +79,6 @@ public class LancementJeu {
         afficheMessage("Bienvenue dans le tutoriel, je vais vous apprendre les bases du jeu dans ce court tutoriel");
         afficheMessage("Tout d'abord pour quitter le jeu, renseignez la commande \"quitter\".");
         afficheMessage("Je vais maintenant vous donner une épée en bois :)");
-        return new Objet("épée en bois", 1, 1, "épée", new Stat(0,0,1,0,0,0,0,0,0,0,0,0));
+        return new Objet("épée en bois", 1, 1, "epee", new Stat(0,0,1,0,0,0,0,0,0,0,0,0));
     }
 }

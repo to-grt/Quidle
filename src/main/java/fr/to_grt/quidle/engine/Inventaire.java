@@ -25,9 +25,31 @@ public class Inventaire {
     public int          getLimitePoids() { return limitePoids; }
     public void         setLimitePoids(int pLimitePoids) { limitePoids = pLimitePoids; }
 
+    public boolean contientObjet(Objet pObjet) {
 
+        return listeInventaire.contains(pObjet);
+    }
 
-    public String ajoutObjet(Objet pObjet) {
+    public boolean peutAjouter(Objet pObjet) {
+
+        return poids + pObjet.getPoids() <= limitePoids;
+    }
+
+    public Objet objetParNom(String pNomObjet) {
+
+        Iterator<Objet> iterator = listeInventaire.iterator();
+        while (iterator.hasNext()) {
+
+            Objet objet = iterator.next();
+            if( objet.getNom().equals(pNomObjet) ) {
+
+                return objet;
+            }
+        }
+        return null;
+    }
+
+    public String ajouterObjet(Objet pObjet) {
 
         if( poids + pObjet.getPoidsObjet() <= limitePoids) {
             listeInventaire.add(pObjet);
@@ -37,7 +59,7 @@ public class Inventaire {
         return "L'objet est trop lourd !";
     }
 
-    public String retraitObjet(Objet pObjet) {
+    public String retirerObjet(Objet pObjet) {
 
         listeInventaire.remove(pObjet);
         poids -= pObjet.getPoidsObjet();

@@ -28,6 +28,9 @@ public class Objet {
 
     public String   getNom() { return nom; }
     public void     setNom(String pNom) { nom = pNom; }
+
+    public int      getPoids() { return poids; }
+    public void     setPoids(int pPoids) { poids = pPoids; }    
     
     public int      getPoidsObjet() { return poids; }
     public void     setPoidsObjet(int pPoids) { poids = pPoids; }
