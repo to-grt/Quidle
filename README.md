@@ -1,2 +1,2 @@
 # Quidle
-My first IDLE game
+My first IDLE game - WIP
